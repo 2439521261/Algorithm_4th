@@ -23,7 +23,7 @@ public class Heap{
     
     public static void sort(int[] pq) {
         int N = pq.length;
-        for (int k = N/2; k >= 1; k--)              // 这里的for循环的作用就是建立一个堆有序，即堆的父结点总是比堆的子结点大，只需要对前1/2的结点操作，因为剩下的都是边缘的结点
+        for (int k = N/2; k >= 1; k--)              // 这里的for循环的作用就是建立一个堆有序，每个结点都小于等于它的父结点，只需要对前1/2的结点操作，因为剩下的都是边缘的结点
             sink(pq, k, N);
         while (N > 1) {                             // 这里的while循环是不断的取最大的，然后将他放在堆的最后面，这样，当我们print的时候，就是升序的排序
             exch(pq, 1, N--);
